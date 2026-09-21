@@ -1,0 +1,6 @@
+wwwroot\styles.css
+wwwroot\index.html
+wwwroot\app.js
+C:\Projects\Demos\GH300\gh-300-demo\dotnet\wwwroot\app.js
+C:\Projects\Demos\GH300\gh-300-demo\dotnet\wwwroot\index.html
+C:\Projects\Demos\GH300\gh-300-demo\dotnet\wwwroot\styles.css

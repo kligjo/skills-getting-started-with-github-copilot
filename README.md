@@ -1,16 +1,44 @@
-# Getting Started with GitHub Copilot
+# Mergington High School Activities
 
-<img src="https://octodex.github.com/images/Professortocat_v2.png" align="right" height="200px" />
+A small FastAPI application for viewing extracurricular activities and registering students.
 
-Hey kligjo!
+## Prerequisites
 
-Mona here. I'm done preparing your exercise. Hope you enjoy! 💚
+- Python 3.10 or later
 
-Remember, it's self-paced so feel free to take a break! ☕️
+## Run Locally
 
-[![](https://img.shields.io/badge/Go%20to%20Exercise-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/kligjo/skills-getting-started-with-github-copilot/issues/1)
+From the repository root, create and activate a virtual environment:
 
----
+```powershell
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+```
 
-&copy; 2025 GitHub &bull; [Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) &bull; [MIT License](https://gh.io/mit)
+Install the dependencies and start the development server:
 
+```powershell
+pip install -r requirements.txt
+cd src
+uvicorn app:app --reload
+```
+
+Open the application at http://localhost:8000/. FastAPI's interactive API documentation is available at http://localhost:8000/docs.
+
+Stop the server with `Ctrl+C`. Activity data is stored in memory, so registrations reset whenever the server restarts.
+
+## Test
+
+After adding tests, run them from the `src` directory:
+
+```powershell
+pytest
+```
+
+## API Routes
+
+| Method | Route                                                             | Description                            |
+| ------ | ----------------------------------------------------------------- | -------------------------------------- |
+| `GET`  | `/activities`                                                     | List all activities and their details. |
+| `GET`  | `/activities/{activity_name}/participants`                        | List participants for one activity.    |
+| `POST` | `/activities/{activity_name}/signup?email=student@mergington.edu` | Register a student for an activity.    |
